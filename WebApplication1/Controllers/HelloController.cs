@@ -20,7 +20,7 @@ namespace WebApplication1.Controllers
         {
             ServiceHelloClient shc = new ServiceHelloClient();
 
-            ViewBag.Result = shc.HelloWorld(login, password) == null ? "Access Denied" : shc.HelloWorld(login, password);
+            ViewBag.Result = shc.HelloWorld(login, password);
 
             return View();
         }
