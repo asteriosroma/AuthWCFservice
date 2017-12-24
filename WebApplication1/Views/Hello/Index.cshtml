@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <form action="/Hello/Login" method="post">
+        @Html.AntiForgeryToken()
+        <div>
+            <label>Логин</label>
+            <input name="login" value="test" required />
+        </div>
+        <br>
+        <div>
+            <label>Пароль</label>
+            <input name="password" value="test" required />
+        </div>
+        <br>
+        <input type="submit" value="Отправить" />
+    </form>
+</body>
+</html>
