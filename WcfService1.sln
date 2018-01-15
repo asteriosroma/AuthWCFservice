@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService1", "WcfService1\WcfService1.csproj", "{517FCA85-D14A-475A-BA44-657F1E89119A}"
 EndProject
@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebAppli
 	ProjectSection(ProjectDependencies) = postProject
 		{517FCA85-D14A-475A-BA44-657F1E89119A} = {517FCA85-D14A-475A-BA44-657F1E89119A}
 	EndProjectSection
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database2", "Database2\Database2.sqlproj", "{D09A7CA8-632E-48A4-A62F-9B712DB4325D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,8 +26,17 @@ Global
 		{BD5B0023-02C6-4F4D-96DF-FCA9C8BB59F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD5B0023-02C6-4F4D-96DF-FCA9C8BB59F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD5B0023-02C6-4F4D-96DF-FCA9C8BB59F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D09A7CA8-632E-48A4-A62F-9B712DB4325D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D09A7CA8-632E-48A4-A62F-9B712DB4325D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D09A7CA8-632E-48A4-A62F-9B712DB4325D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D09A7CA8-632E-48A4-A62F-9B712DB4325D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D09A7CA8-632E-48A4-A62F-9B712DB4325D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D09A7CA8-632E-48A4-A62F-9B712DB4325D}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62EB2E02-6A85-4B4E-B39D-E30E66F5153B}
 	EndGlobalSection
 EndGlobal
