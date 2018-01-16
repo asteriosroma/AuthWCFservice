@@ -52,6 +52,7 @@ namespace WcfService1
             }
             catch(Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return null;
             }
         }
