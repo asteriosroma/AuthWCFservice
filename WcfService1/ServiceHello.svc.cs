@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.IdentityModel.Selectors;
 using System.IdentityModel.Tokens;
@@ -20,8 +21,8 @@ namespace WcfService1
         {
             try
             {
-                string connectionString = @"Data Source=LENOVO\SQLEXPRESS;Initial Catalog=MyDatabase;Integrated Security=True";
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(ConfigurationManager.
+                    ConnectionStrings["DefaultConnection"].ConnectionString))
                 {
                     connection.Open();
                     SqlDataReader reader;

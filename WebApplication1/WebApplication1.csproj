@@ -225,6 +225,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Hello\Index.cshtml" />
     <Content Include="Views\Hello\Login.cshtml" />
+    <Content Include="Views\Hello\Error.cshtml" />
     <None Include="Service References\ServiceReferenceClient\ServiceHello.wsdl" />
     <None Include="Service References\ServiceReferenceClient\ServiceHello.xsd">
       <SubType>Designer</SubType>
@@ -235,7 +236,6 @@
     <None Include="Service References\ServiceReferenceClient\ServiceHello2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Views\Hello\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -279,7 +279,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>55524</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55200/</IISUrl>
+          <IISUrl>http://localhost:62434/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
