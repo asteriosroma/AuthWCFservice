@@ -9,15 +9,14 @@ namespace WcfService1.Models
     {
         List<Account> listAccounts = new List<Account>();
 
-        public AccountModel()
-        {
-            listAccounts.Add(new Account { Username = "test", Password = "test" });
-        }
-
         public bool Login(string username, string password)
         {
-            return listAccounts.Count(acc => acc.Username.Equals(username) &&
-                acc.Password.Equals(password)) > 0;
+            return listAccounts.Any(acc => acc.Username == username && acc.Password == password);
+        }
+
+        public void AddAccount(Account acc)
+        {
+            listAccounts.Add(acc);
         }
     }
 }

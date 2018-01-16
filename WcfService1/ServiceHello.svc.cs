@@ -16,49 +16,51 @@ namespace WcfService1
     public class ServiceHello : IServiceHello
     {
 
-
-        public string HelloWorld(string login, string pass)
+        public Account HelloAccount(string client_login, string client_pass)
         {
             try
             {
-                SqlDataReader reader;
-                string result = string.Empty;
-
                 string connectionString = @"Data Source=LENOVO\SQLEXPRESS;Initial Catalog=MyDatabase;Integrated Security=True";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
+                    SqlDataReader reader;
                     SqlCommand command = new SqlCommand();
                     command.CommandText = "SELECT * FROM Accounts";
                     command.Connection = connection;
                     reader = command.ExecuteReader();
 
+                    AccountModel am = new AccountModel();
+
+
                     if (reader.HasRows)
                     {
-                        reader.Read();
-                        object login2 = reader.GetValue(1);
-                        object pass2 = reader.GetValue(2);
-
-                        result += "Your login is " + login2 + " and password is " + pass2;
-                        CustomValidator v = new CustomValidator();
-                        v.Validate(login, pass);
+                        while (reader.Read())
+                        {
+                            Account acc = new Account();
+                            acc.Username = reader.GetValue(1).ToString().Trim();
+                            acc.Password = reader.GetValue(2).ToString().Trim();
+                            am.AddAccount(acc);
+                        }
                     }
+
+                    MyValidator validator = new MyValidator();
+                    validator.Validate(am, client_login, client_pass);
                 }
-                
-                return "Hello world! " + result;
+
+                return new Account(client_login, client_pass);
             }
-            catch(SecurityTokenException ex)
+            catch(Exception ex)
             {
-                return ex.Message;
+                return null;
             }
         }
     }
 
-    class CustomValidator : UserNamePasswordValidator
+    class MyValidator
     {
-        public override void Validate(string userName, string password)
+        public void Validate(AccountModel am, string userName, string password)
         {
-            AccountModel am = new AccountModel();
             if (am.Login(userName, password))
             {
                 return;

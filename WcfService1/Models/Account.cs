@@ -11,5 +11,13 @@ namespace WcfService1.Models
         public string Username { get; set; }
 
         public string Password { get; set; }
+
+        public Account() { }
+
+        public Account(string login, string pass)
+        {
+            Username = login;
+            Password = pass;
+        }
     }
 }

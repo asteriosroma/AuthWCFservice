@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using WcfService1.Models;
 
 namespace WcfService1
 {
@@ -12,6 +13,6 @@ namespace WcfService1
     public interface IServiceHello
     {
         [OperationContract]
-        string HelloWorld(string login, string pass);
+        Account HelloAccount(string login, string pass);
     }
 }

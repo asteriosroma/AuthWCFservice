@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication1.ServiceReferenceClient;
+using WcfService1.Models;
 
 namespace WebApplication1.Controllers
 {
@@ -20,9 +21,14 @@ namespace WebApplication1.Controllers
         {
             ServiceHelloClient shc = new ServiceHelloClient();
 
-            ViewBag.Result = shc.HelloWorld(login, password);
+            Account acc = shc.HelloAccount(login, password);
 
-            return View();
+            if(acc == null)
+            {
+                return View("Error");
+            }
+
+            return View(acc);
         }
     }
 }

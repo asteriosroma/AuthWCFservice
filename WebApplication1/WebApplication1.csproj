@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -192,6 +193,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Properties\DataSources\WcfService1.Models.Account.datasource" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -204,13 +206,16 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <None Include="Service References\ServiceReferenceClient\ServiceHello.disco" />
     <None Include="Service References\ServiceReferenceClient\configuration91.svcinfo" />
     <None Include="Service References\ServiceReferenceClient\configuration.svcinfo" />
     <None Include="Service References\ServiceReferenceClient\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -219,6 +224,7 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\Hello\Index.cshtml" />
+    <Content Include="Views\Hello\Login.cshtml" />
     <None Include="Service References\ServiceReferenceClient\ServiceHello.wsdl" />
     <None Include="Service References\ServiceReferenceClient\ServiceHello.xsd">
       <SubType>Designer</SubType>
@@ -226,7 +232,10 @@
     <None Include="Service References\ServiceReferenceClient\ServiceHello1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Views\Hello\Login.cshtml" />
+    <None Include="Service References\ServiceReferenceClient\ServiceHello2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\Hello\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -242,6 +251,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WcfService1\WcfService1.csproj">
+      <Project>{517fca85-d14a-475a-ba44-657f1e89119a}</Project>
+      <Name>WcfService1</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReferenceClient\" />
@@ -264,7 +279,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>55524</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55524/</IISUrl>
+          <IISUrl>http://localhost:55200/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
